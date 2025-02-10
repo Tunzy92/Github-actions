@@ -1,4 +1,4 @@
-name: comment when we create new issue
+name: Create a comment on new issue
 
 on:
   issues:
@@ -10,5 +10,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Dump issues workflow
-        run: echo "${{ toJSON(github.event) }}" | jq
+        run: echo '${{ toJSON(github.event) }}' | jq
         shell: bash
