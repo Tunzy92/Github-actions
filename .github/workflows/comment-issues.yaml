@@ -1,0 +1,14 @@
+name: comment when we create new issue
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Dump issues workflow
+        run: echo "${{ toJSON(github.event) }}" | jq
+        shell: bash
